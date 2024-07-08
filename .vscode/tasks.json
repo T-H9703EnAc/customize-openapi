@@ -1,0 +1,146 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gradle build",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew build",
+            "detail": "プロジェクトをビルドします"
+        },
+		{
+            "label": "gradle run",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew run",
+            "detail": "プロジェクトを実行します"
+        },
+        {
+            "label": "gradle build --refresh-dependencies",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew build --refresh-dependencies",
+            "detail": "キャッシュを無視し、すべての依存関係をリフレッシュして再ダウンロードする"
+        },
+        {
+            "label": "gradle clean",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew clean",
+            "detail": "ビルドディレクトリをクリーンします"
+        },
+        {
+            "label": "gradle bootRun",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew bootRun",
+            "detail": "Spring Bootアプリケーションを実行します"
+        },
+        {
+            "label": "gradle test",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew test",
+            "detail": "テストを実行します"
+        },
+        {
+            "label": "gradle build (detailed)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew build --info",
+            "detail": "プロジェクトをビルドし、詳細なログを出力します"
+        },
+        {
+            "label": "gradle build --stacktrace",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew build --stacktrace",
+            "detail": "プロジェクトをビルドし、詳細なログを出力します"
+        },
+        {
+            "label": "gradle clean (refresh dependencies)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew clean --refresh-dependencies",
+            "detail": "ビルドディレクトリをクリーンし、依存関係を更新します"
+        },
+        {
+            "label": "gradle bootRun (debug mode)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew bootRun",
+            "args": ["--debug-jvm"],
+            "detail": "Spring BootアプリケーションをJVMデバッグオプション付きで実行します"
+        },
+        {
+            "label": "gradle test (detailed)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew test --info",
+            "detail": "テストを実行し、詳細なログを出力します"
+        },
+        {
+            "label": "gradle cleanBuildCache --stacktrace",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew cleanBuildCache --stacktrace",
+            "detail": "Gradleのビルドキャッシュをクリアするコマンドです"
+        },
+        {
+            "label": "gradle dependencies",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew dependencies",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
+        },
+        {
+            "label": "gradle dependencies > dependencies.txt",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew dependencies > /app/app/logs/dependencies.txt",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
+        },
+        {
+            "label": "gradle dependencies --stacktrace",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew dependencies --stacktrace",
+            "detail": "Gradleの依存関係の詳細を出力し、競合している依存関係を確認するコマンドです"
+        },
+        {
+            "label": "openapi generate",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew openApiGenerate",
+            "detail": "OpenAPI仕様からコードを自動生成します"
+        },
+        {
+            "label": "openapi generate(detailed)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew openApiGenerate --info",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
+        },
+        {
+            "label": "openapi generate(stacktrace)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew openApiGenerate --stacktrace",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します"
+        },
+        {
+            "label": "openapi runOpenApiGenerator(stacktrace)",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew runOpenApiGenerator --stacktrace",
+            "detail": "OpenAPI仕様からコードを自動生成し、詳細なログを出力します(直接CLIを実行)"
+        },
+        {
+            "label": "openapi createTemplates",
+            "type": "shell",
+            "command": "java -jar /usr/local/bin/openapi-generator-cli.jar author template -g kotlin-spring -o /app/app/src/main/resources/templates",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
+        },
+        {
+            "label": "openapi extractControllerTemplate",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew extractControllerTemplate --stacktrace",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを作成します"
+        },
+        {
+            "label": "openapi cleanGeneratedTemplates",
+            "type": "shell",
+            "command": "cd dto-customize && ./gradlew cleanGeneratedTemplates --stacktrace",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを削除します"
+        },
+        {
+            "label": "openapi deleteTemplates",
+            "type": "shell",
+            "command": "rm -rf /app/app/src/main/resources/templates/*",
+            "detail": "OpenAPIのデフォルトのMustacheテンプレートを削除します"
+        }
+    ]
+}
