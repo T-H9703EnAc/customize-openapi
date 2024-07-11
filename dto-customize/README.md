@@ -27,10 +27,11 @@ components:
 - モデルを編集する場合は以下のテンプレートを編集する:
     1. **dataClass.mustache**
     2. **model.mustache**
-- [元となるテンプレートの公式リポジトリ](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/kotlin-spring){:target="_blank"}
-    1. [dataClass.mustache](https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/resources/kotlin-spring/dataClass.mustache){:target="_blank"}
-    2. [model.mustache](https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/resources/kotlin-spring/model.mustache){:target="_blank"}
+- <a href="https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/kotlin-spring" target="_blank" rel="noopener noreferrer">元となるテンプレートの公式リポジトリ</a>
+    1. <a href="https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/resources/kotlin-spring/dataClass.mustache" target="_blank" rel="noopener noreferrer">dataClass.mustache</a>
+    2. <a href="https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/resources/kotlin-spring/model.mustache" target="_blank" rel="noopener noreferrer">model.mustache</a>
 - `{{???}}` の形でテンプレートをカスタマイズすることができます。
+
 
 ## YAMLに独自のプロパティを定義し、Mustacheテンプレートで読み込めるようにする
 
