@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Product API
+  version: 1.0.0
+components:
+  schemas:
+    ProductModel:
+      custom-package: "com.app.model.xxx" #独自のプロパティを作る
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+          description: "プロダクトID"
+        productName:
+          type: string
+          description: "プロダクト名"
+        price:
+          type: number
+          format: float
+          description: "価格"
+        category:
+          $ref: '#/components/schemas/CategoryModel'
+        tags:
+          type: array
+          items:
+            type: string
+          description: "タグのリスト"
+    CategoryModel:
+      type: object
+      properties:
+        categoryId:
+          type: integer
+          format: int64
+          description: "カテゴリID"
+        categoryName:
+          type: string
+          description: "カテゴリ名"

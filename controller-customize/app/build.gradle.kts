@@ -20,7 +20,7 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.6")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher") // Deprecated警告の解消
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 java {
@@ -30,7 +30,7 @@ java {
 }
 
 application {
-    mainClass.set("org.app.MainAppKt")
+    mainClass.set("org.app.AppKt")
 }
 
 tasks.named<Test>("test") {
@@ -39,9 +39,8 @@ tasks.named<Test>("test") {
 
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
-        // Configure compiler options
         freeCompilerArgs.add("-Xjsr305=strict")
-        jvmTarget.set(JvmTarget.JVM_17) // JVMターゲットを17に設定
+        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
@@ -55,7 +54,7 @@ openApiGenerate {
     generatorName.set("kotlin-spring")
 
     // OpenAPI仕様ファイルのパスを指定します。$projectDirはプロジェクトのルートディレクトリを指し、openapi/XXX.yamlファイルを指定しています。
-    inputSpec.set("$projectDir/openapi/product.yaml")
+    inputSpec.set("$projectDir/openapi/openapi.yaml")
 
     // 生成されたコードの出力ディレクトリを指定します。$buildDirはビルドディレクトリを指し、generatedフォルダに出力されます。
     outputDir.set(layout.buildDirectory.dir("generated").map { it.asFile.path })
@@ -75,9 +74,5 @@ openApiGenerate {
             "dateLibrary" to "java11",
         )
     )
-
-    // カスタムテンプレートのディレクトリを指定
-    templateDir.set("$projectDir/openapi/templates/")
-
     
 }
